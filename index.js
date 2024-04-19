@@ -18,7 +18,12 @@ dbConnection();
 
 // Lectura y parse del body
 app.use(express.json());
+// Login y creación de usuarios
 app.use('/api/login', require('./routes/auth'));
+// Operaciones sobre usuarios
+app.use('/api/usuarios', require('./routes/usuarios'));
+// Obtener mensajes
+app.use('/api/mensajes', require('./routes/mensajes'));
 
 
 server.listen(process.env.PORT, (err) => {
